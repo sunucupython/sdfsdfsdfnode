@@ -1,7 +1,7 @@
 const http = require('http').createServer();
 const io = require('socket.io')(http);
 
-http.listen(80);
+http.listen(process.env.PORT || 3000);
 
 let count = 0;
 let activeColor = '#f1f1f1';
