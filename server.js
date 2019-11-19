@@ -18,10 +18,10 @@ io.on('connection', socket => {
         activeColor = color;
         socket.broadcast.emit("changeColor",activeColor);
 
-    })
+    });
     socket.on('disconnect',() =>{
         count--;
         io.emit('disUser',count);
         console.log("disconnect kullanici");
-    })
+    });
 });
