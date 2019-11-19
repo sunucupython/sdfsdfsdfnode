@@ -16,12 +16,14 @@ io.on('connection', socket => {
 
     socket.on("changeColor",color =>{
         activeColor = color;
+        console.log('renk degisti bilgisi');
         socket.broadcast.emit("changeColor",activeColor);
 
     });
     socket.on('disconnect',() =>{
         count--;
         io.emit('disUser',count);
+        
         console.log("disconnect kullanici");
     });
 });
