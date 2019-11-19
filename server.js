@@ -1,11 +1,12 @@
 const http = require('http').createServer();
 const io = require('socket.io')(http);
-const PORT = process.env.PORT
-http.listen(PORT);
+http.listen(process.env.PORT || 3000, function() {
+  console.log('basladsim user');
+})
 
 let count = 0;
 let activeColor = '#f1f1f1';
-console.log('basladsim user');
+
 
 
 io.on('connection', socket => {
